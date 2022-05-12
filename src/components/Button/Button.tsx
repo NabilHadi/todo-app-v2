@@ -15,7 +15,11 @@ function Button({
   otherProps,
 }: ButtonProps) {
   return (
-    <button className={className} onClick={onClickHandler} {...otherProps}>
+    <button
+      className={"clickable " + className}
+      onClick={onClickHandler}
+      {...otherProps}
+    >
       {children}
     </button>
   );
