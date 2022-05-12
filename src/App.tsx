@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import MainPage from "./components/MainPage/MainPage";
 import { defaultProjectId, projects } from "./projectsData";
 
