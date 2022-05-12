@@ -8,7 +8,7 @@ describe("Button", () => {
     expect(screen.getByRole("button", { name: "test" })).toBeInTheDocument();
   });
   it("should correct button classes", () => {
-    render(<Button classNames="helloWorld">test</Button>);
+    render(<Button className="helloWorld">test</Button>);
     expect(screen.getByRole("button", { name: "test" })).toHaveClass(
       "helloWorld"
     );

@@ -3,12 +3,12 @@ import { ReactNode } from "react";
 type ButtonProps = {
   children: ReactNode | ReactNode[];
   onClickHandler?: React.MouseEventHandler;
-  classNames?: string;
+  className?: string;
 };
 
-function Button({ children, classNames, onClickHandler }: ButtonProps) {
+function Button({ children, className, onClickHandler }: ButtonProps) {
   return (
-    <button className={classNames} onClick={onClickHandler}>
+    <button className={className} onClick={onClickHandler}>
       {children}
     </button>
   );
