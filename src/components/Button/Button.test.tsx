@@ -4,18 +4,18 @@ import Button from "./Button";
 
 describe("Button", () => {
   it("should render correct button name", () => {
-    render(<Button name="test" />);
+    render(<Button>test</Button>);
     expect(screen.getByRole("button", { name: "test" })).toBeInTheDocument();
   });
   it("should correct button classes", () => {
-    render(<Button name="test" classNames="helloWorld" />);
+    render(<Button classNames="helloWorld">test</Button>);
     expect(screen.getByRole("button", { name: "test" })).toHaveClass(
       "helloWorld"
     );
   });
   it("should call onClickHandler when clicked", () => {
     const onClickHandler = jest.fn();
-    render(<Button name="test" onClickHandler={onClickHandler} />);
+    render(<Button onClickHandler={onClickHandler}>test</Button>);
     const button = screen.getByRole("button", { name: "test" });
     userEvent.dblClick(button);
     expect(onClickHandler).toHaveBeenCalledTimes(2);

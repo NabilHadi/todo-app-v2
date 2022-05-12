@@ -1,13 +1,15 @@
+import { ReactNode } from "react";
+
 type ButtonProps = {
-  name: string;
+  children: ReactNode | ReactNode[];
   onClickHandler?: React.MouseEventHandler;
   classNames?: string;
 };
 
-function Button({ name, classNames, onClickHandler }: ButtonProps) {
+function Button({ children, classNames, onClickHandler }: ButtonProps) {
   return (
     <button className={classNames} onClick={onClickHandler}>
-      {name}
+      {children}
     </button>
   );
 }
