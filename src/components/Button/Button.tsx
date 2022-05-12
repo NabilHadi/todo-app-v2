@@ -4,11 +4,18 @@ type ButtonProps = {
   children: ReactNode | ReactNode[];
   onClickHandler?: React.MouseEventHandler;
   className?: string;
+  otherProps?: React.ComponentPropsWithoutRef<"button"> &
+    Record<string, string>;
 };
 
-function Button({ children, className, onClickHandler }: ButtonProps) {
+function Button({
+  children,
+  className,
+  onClickHandler,
+  otherProps,
+}: ButtonProps) {
   return (
-    <button className={className} onClick={onClickHandler}>
+    <button className={className} onClick={onClickHandler} {...otherProps}>
       {children}
     </button>
   );
