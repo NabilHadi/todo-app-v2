@@ -4,7 +4,7 @@ import { defaultProjectId, projects } from "./projectsData";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App min-h-screen flex flex-col">
       <MainPage projects={projects} defaultProjectId={defaultProjectId} />
     </div>
   );
