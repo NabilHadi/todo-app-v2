@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.css";
+import MainPage from "./components/MainPage/MainPage";
+import { defaultProjectId, projects } from "./projectsData";
 
 function App() {
   return (
     <div className="App">
-      <h1>Todo App</h1>
+      <MainPage projects={projects} defaultProjectId={defaultProjectId} />
     </div>
   );
 }
