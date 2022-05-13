@@ -1,3 +1,5 @@
+import { mdiCheckboxMarkedCircleOutline, mdiFileTree } from "@mdi/js";
+import Icon from "@mdi/react";
 import { useState } from "react";
 import { IdType, ProjectType } from "../../projectsData";
 import Button from "../Button/Button";
@@ -27,24 +29,38 @@ function MainPage({ projects, defaultProjectId }: MainPageProps) {
   };
 
   return (
-    <div className="grid grow grid-cols-6">
-      <aside className="flex flex-col gap-4 border p-4">
-        <Button className="py-2 shadow-sm px-4 border rounded-md border-blue-300">
+    <div className="grid grow grid-cols-6 grid-rows-[10%_1fr] bg-[#F9F8F8] text-[#232F27]">
+      <header className="row-span-1 col-span-6 border-b flex items-center px-6 ">
+        <div className="text-2xl font-extrabold tracking-wider flex items-center">
+          <Icon
+            path={mdiCheckboxMarkedCircleOutline}
+            size="1.5rem"
+            className="text-2xl font-extrabold text-blue-700"
+          />
+          Todo
+        </div>
+      </header>
+      <aside className="flex flex-col gap-4 border p-4 border-t-0">
+        <Button className="py-2 shadow-sm px-4 border rounded-md bg-[#D18275] text-[#F9F8F8]">
           Inbox
         </Button>
-        <Button className="py-2 shadow-sm px-4 border rounded-md border-blue-300">
+        <Button className="py-2 shadow-sm px-4 border rounded-md bg-[#D18275] text-[#F9F8F8]">
           Today
         </Button>
-        <Button className="py-2 shadow-sm px-4 border rounded-md border-blue-300">
+        <Button className="py-2 shadow-sm px-4 border rounded-md bg-[#D18275] text-[#F9F8F8]">
           Next 7 days
         </Button>
         <div className="border my-4"></div>
         <ul className="flex flex-col w-100 gap-3">
+          <span className="text-center font-extrabold tracking-wide flex justify-center items-center gap-1">
+            <Icon path={mdiFileTree} size="1.3rem" className="font-extrabold" />
+            Projects
+          </span>
           {projects
             ?.filter((project) => project.id !== defaultProjectId)
             .map((project) => (
               <li key={project.id}>
-                <Button className="w-full py-2 shadow-sm px-4 border rounded-md border-red-300">
+                <Button className="w-full py-2 shadow-sm px-4 border rounded-md bg-[#D18275] text-[#F9F8F8]">
                   {project.name}
                 </Button>
               </li>
