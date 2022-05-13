@@ -13,10 +13,10 @@ function MainPage({ projects, defaultProjectId }: MainPageProps) {
   );
 
   const handleTodoStatusChange = (todoId: IdType, isCompleted?: boolean) => {
-    setCurrentProject((x) => {
+    setCurrentProject((oldProject) => {
       return {
-        ...x,
-        todos: x.todos.map((todo) => {
+        ...oldProject,
+        todos: oldProject.todos.map((todo) => {
           if (todo.id === todoId) {
             return { ...todo, isCompleted };
           }
@@ -39,12 +39,12 @@ function MainPage({ projects, defaultProjectId }: MainPageProps) {
           Next 7 days
         </Button>
         <div className="border my-4"></div>
-        <ul className="flex flex-col gap-3">
+        <ul className="flex flex-col w-100 gap-3">
           {projects
             ?.filter((project) => project.id !== defaultProjectId)
             .map((project) => (
               <li key={project.id}>
-                <Button className="py-2 shadow-sm px-4 border rounded-md border-red-300">
+                <Button className="w-full py-2 shadow-sm px-4 border rounded-md border-red-300">
                   {project.name}
                 </Button>
               </li>
@@ -68,7 +68,7 @@ function MainPage({ projects, defaultProjectId }: MainPageProps) {
               <Button
                 children=""
                 className={
-                  "appearance-none h-5 w-5 border border-gray-300 rounded-md  focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left cursor-pointer" +
+                  "appearance-none h-5 w-7 border border-gray-300 rounded-md  focus:outline-none transition duration-200 my-1 p-1 align-top bg-no-repeat bg-center bg-contain float-left cursor-pointer" +
                   (todo.isCompleted && " bg-blue-600 border-blue-600")
                 }
                 onClickHandler={() =>

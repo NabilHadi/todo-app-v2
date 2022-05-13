@@ -4,6 +4,6 @@
 
 @layer components {
   .clickable {
-    @apply transition duration-200 hover:scale-y-105 hover:opacity-90 active:opacity-100 active:scale-y-100;
+    @apply transition duration-200 shadow-md hover:scale-y-105 hover:opacity-90 hover:shadow-lg active:opacity-100 active:scale-y-100 active:shadow-md;
   }
 }
